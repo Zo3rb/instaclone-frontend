@@ -9,7 +9,7 @@ const ProfileComp = props => {
     // Creating Posts State to fetch & its Helper Method
     const [myPosts, setMyPosts] = useState([]);
     const fetchMyPosts = async () => {
-        const response = await axios.get('http://localhost:5000/api/posts/my-posts', {
+        const response = await axios.get('https://instaclonewong.herokuapp.com/api/posts/my-posts', {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -35,7 +35,7 @@ const ProfileComp = props => {
             const response = await axios.post(`https://api.cloudinary.com/v1_1/dqyayf3rf/upload`, imgData);
 
             // Submitting it to The Profile Picture
-            await axios.post('http://localhost:5000/api/users/profile-image', {
+            await axios.post('https://instaclonewong.herokuapp.com/api/users/profile-image', {
                 newImg: response.data.url
             }, {
                 headers: {
