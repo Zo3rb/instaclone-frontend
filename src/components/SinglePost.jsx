@@ -17,7 +17,7 @@ const SinglePost = props => {
             return;
         }
         const commentData = { postId: props.post._id, comment }
-        await axios.post('http://localhost:5000/api/posts/comment', commentData, {
+        await axios.post('https://instaclonewong.herokuapp.com/api/posts/comment', commentData, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -48,7 +48,7 @@ const SinglePost = props => {
     // Creating The Like Button Helper Method
     const LIKE_UNLIKE_POST = async () => {
         if (isLiked) {
-            await axios.post('http://localhost:5000/api/posts/unlike', { postId: props.post._id }, {
+            await axios.post('https://instaclonewong.herokuapp.com/api/posts/unlike', { postId: props.post._id }, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('token')}`
                 }
@@ -57,7 +57,7 @@ const SinglePost = props => {
             setPostsLikes(postsLikes -= 1);
             return;
         }
-        await axios.post('http://localhost:5000/api/posts/like', { postId: props.post._id }, {
+        await axios.post('https://instaclonewong.herokuapp.com/api/posts/like', { postId: props.post._id }, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
