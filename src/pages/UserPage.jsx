@@ -11,7 +11,7 @@ const UserPage = props => {
     const [userPosts, setUserPosts] = useState([]);
 
     const fetchUser = async () => {
-        const response = await axios.get(`http://localhost:5000/api/users/${props.match.params.userId}`, {
+        const response = await axios.get(`https://instaclonewong.herokuapp.com/api/users/${props.match.params.userId}`, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -25,7 +25,7 @@ const UserPage = props => {
     }, []);
 
     const followUser = async () => {
-        await axios.post(`http://localhost:5000/api/users/follow`, { followerId: props.match.params.userId }, {
+        await axios.post(`https://instaclonewong.herokuapp.com/api/users/follow`, { followerId: props.match.params.userId }, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
@@ -34,7 +34,7 @@ const UserPage = props => {
     };
 
     const unfollowUser = async () => {
-        await axios.post(`http://localhost:5000/api/users/unfollow`, { followerId: props.match.params.userId }, {
+        await axios.post(`https://instaclonewong.herokuapp.com/api/users/unfollow`, { followerId: props.match.params.userId }, {
             headers: {
                 authorization: `Bearer ${localStorage.getItem('token')}`
             }
