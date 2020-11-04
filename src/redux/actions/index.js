@@ -5,7 +5,7 @@ import axios from 'axios';
 import { AUTH_ERROR, AUTH_USER, AUTH_OFF, CLEAR_ERROR, LOGIN_USER, POST_CREATE, POST_ERROR, POSTS_FETCH } from './types';
 
 // Setting The API URL
-const BASE_URL = 'http://localhost:5000/api';
+const BASE_URL = 'https://instaclonewong.herokuapp.com/api';
 
 // Creating The Signup Action Creator
 export const signup = (formProps, callback) => async dispatch => {
