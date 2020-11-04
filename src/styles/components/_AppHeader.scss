@@ -1,0 +1,17 @@
+.logo-link {
+  color: #fff !important;
+  font-size: 1.4rem;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.app-header-items li {
+  color: #fff;
+  margin: 0 10px;
+  font-size: 1.2rem;
+}
+
+.active-link {
+  color: #fff;
+}
